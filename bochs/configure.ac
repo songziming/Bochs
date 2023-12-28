@@ -830,6 +830,7 @@ AC_ARG_ENABLE(debugger,
   )
 AC_SUBST(DEBUGGER_VAR)
 
+gui_debugger=0
 AC_MSG_CHECKING(enable Bochs internal debugger GUI)
 AC_ARG_ENABLE(debugger-gui,
   AS_HELP_STRING([--enable-debugger-gui], [compile in support for Bochs internal debugger GUI (yes, if debugger is on)]),
@@ -839,7 +840,6 @@ AC_ARG_ENABLE(debugger-gui,
    else
     AC_MSG_RESULT(no)
     AC_DEFINE(BX_DEBUGGER_GUI, 0)
-    gui_debugger=0
    fi],
   [
     if test "$bx_debugger" = 1; then
@@ -848,7 +848,6 @@ AC_ARG_ENABLE(debugger-gui,
     else
       AC_MSG_RESULT(no)
       AC_DEFINE(BX_DEBUGGER_GUI, 0)
-      gui_debugger=0
     fi
     ]
   )
